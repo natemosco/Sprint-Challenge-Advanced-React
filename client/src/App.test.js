@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from "@testing-library/react";
+import { render, findAllByTestId } from "@testing-library/react";
 import App from './App';
 
 test('renders without crashing', () => {
@@ -12,6 +12,11 @@ test('Alex Morgan is present on the page', () => {
   findByText(/morgan/i);
 });
 
-test("checks all 101 players are displayed on a page",=() => {
-  const findAllBy
+test("checks all 101 players are displayed on a page", () => {
+  //import {findAllByTestId} up at top of App.test.js
+  const container = render(<App></App>);
+  for (let index = 0; index < 101; index++) {
+    findAllByTestId(container, index)
+  }
+
 })

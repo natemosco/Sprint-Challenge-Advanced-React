@@ -48,7 +48,6 @@ class App extends React.Component {
         <h3>{`My player is: ${this.state.favoritePlayer}`}</h3>
         <Form favoritePlayer={this.state.favoritePlayer} customOnChange={customOnChange}></Form>
         <List githubData={this.state.githubData}></List>
-        {/* <p>Alex Morgan</p> */}
 
       </div>
     );
