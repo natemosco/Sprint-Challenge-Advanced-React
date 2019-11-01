@@ -31,20 +31,24 @@ class App extends React.Component {
       });
   }
   componentDidUpdate(prevState) {
-    if (prevState.favPlayer !== this.state.favoritePlayer) {
-      this.setState({ favoritePlayer: this.state.favoritePlayer });
-    }
+    // if (prevState.favoritePlayer !== this.state.favoritePlayer) {
+    //   this.setState({ favoritePlayer: this.state.favoritePlayer });
+    // }
   }
 
   render() {
-
+    const customOnChange = (input) => {
+      this.setState({
+        favoritePlayer: input
+      })
+    }
     return (
       <div className="App">
         <h1>Choose Your Favorite Player:</h1>
         <h3>{`My player is: ${this.state.favoritePlayer}`}</h3>
-        <Form favoritePlayer={this.state.favoritePlayer}></Form>
+        <Form favoritePlayer={this.state.favoritePlayer} customOnChange={customOnChange}></Form>
         <List githubData={this.state.githubData}></List>
-        <p>Alex Morgan</p>
+        {/* <p>Alex Morgan</p> */}
 
       </div>
     );

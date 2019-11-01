@@ -7,8 +7,11 @@ test('renders without crashing', () => {
 });
 
 test('Alex Morgan is present on the page', () => {
-  const { getByText } = render(<App />);
+  const { findByText } = render(<App />);
 
-  getByText(/morgan/i);
+  findByText(/morgan/i);
 });
 
+test("checks all 101 players are displayed on a page",=() => {
+  const findAllBy
+})
